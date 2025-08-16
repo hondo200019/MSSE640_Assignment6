@@ -24,4 +24,4 @@ jobs:
 
       - name: Run Triangle Test File
         run: |
-          python -m unittest triangle_testUnits.py
+          python -m unittest Triangle_Project\triangle_testUnits.py
