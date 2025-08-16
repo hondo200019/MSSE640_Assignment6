@@ -1,3 +1,7 @@
+import math
+from math import sqrt
+
+
 def isTriangleValid(a, b, c) :
     if ((a + b > c) and
         (b + c > a) and
@@ -27,8 +31,19 @@ def triangle():
         return defineTriangle(side_a, side_b, side_c)
     else :
         return "This triangle is invalid!"
-
     
+def triangleArea():
+    print('Define 3 side lengths of a triangle and I will calculate the area.')
+    side_a = float(input("A: "))
+    side_b = float(input("B: "))
+    side_c = float(input("C: "))
+
+    if (isTriangleValid(side_a, side_b, side_c)) :
+        heron_s = (side_a + side_b + side_c)/2
+        area = round(sqrt(heron_s*(heron_s-side_a)*(heron_s-side_b)*(heron_s-side_c)),2)
+        return f"The Area of the Triangle is {area}"
+    else :
+        return "This triangle is invalid!"
 
 
 
@@ -37,13 +52,17 @@ if __name__ == "__main__":
         print('--------------Triangle Checker---------------')
         print("""Menu:
         [1] Use Triangle Checker
-        [2] Quit Program""")
+        [2] Find Area of Triangle
+        [3] Quit Program""")
         choice = input("Enter number of option: ")
-        if(choice == '2') : 
+        if(choice == '3') : 
             print("Exiting Program...")
             break
         elif(choice == '1') :
             print(triangle())
+            print("")
+        elif(choice == '2') :
+            print(triangleArea())
             print("")
         else :
             print("Invalid choice, returning to menu.")

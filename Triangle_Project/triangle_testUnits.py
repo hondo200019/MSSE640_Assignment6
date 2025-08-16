@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from triangleIdentifier import triangle
+from triangleIdentifier import triangle, triangleArea
 
 class TestTriangle(unittest.TestCase):
 
@@ -15,7 +15,8 @@ class TestTriangle(unittest.TestCase):
         '2', '3', '5', # Invalid Triangle with non-zero lengths
         '1', '1', '1', # 1-1-1 Equilateral Triangle
         '0.3', '0.8', '0.8', # Sides less than 1
-        '75', '34', '90' # Large Scalene Triangle
+        '75', '34', '90', # Large Scalene Triangle
+        '6', '10', '11' # Area of triangle
     ])
     def test_multiple_units(self, mock_input):
         self.assertEqual(triangle(), 'This is a Scalene Triangle')
@@ -40,6 +41,9 @@ class TestTriangle(unittest.TestCase):
         print("Testing a valid triangle with side lengths less than 1")
         self.assertEqual(triangle(), 'This is a Scalene Triangle')
         print("Testing large valid triangle")
+        self.assertEqual(triangleArea(), 'The Area of the Triangle is 29.76')
+        print("Testing area of triangle with sides 6, 10, 11")
+
         
 
 
