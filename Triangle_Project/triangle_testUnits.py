@@ -1,6 +1,6 @@
 import unittest
 from unittest.mock import patch
-from triangleIdentifier import triangle, triangleArea
+from Triangle_Project.triangleIdentifier import triangle, triangleArea
 
 class TestTriangle(unittest.TestCase):
 
